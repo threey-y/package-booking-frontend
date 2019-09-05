@@ -1,6 +1,6 @@
 <template>
   <a-form
-    
+    layout="inline"
     :form="form"
     @submit="handleSubmit"
   >
@@ -13,40 +13,15 @@
           'userName',
           {rules: [{ required: true, message: 'Please input your username!' }]}
         ]"
-        placeholder="Username">
+        placeholder="Username"
+      >
+        <a-icon
+          slot="prefix"
+          type="user"
+          style="color:rgba(0,0,0,.25)"
+        />
       </a-input>
     </a-form-item>
-
-    <a-form-item
-      :validate-status="userNameError() ? 'error' : ''"
-      :help="userNameError() || ''"
-    >
-      <a-input
-        v-decorator="[
-          'userName1',
-          {rules: [{ required: true, message: 'Please input your username!' }]}
-        ]"
-        placeholder="Username">
-      </a-input>
-    </a-form-item>
-
-
-    <a-form-item
-      :validate-status="userNameError() ? 'error' : ''"
-      :help="userNameError() || ''"
-    >
-      <a-input
-        v-decorator="[
-          'userName2',
-          {rules: [{ required: true, message: 'Please input your username!' }]}
-        ]"
-        placeholder="Username">
-      </a-input>
-    </a-form-item>
-
-
-
-
     <a-form-item
       :validate-status="passwordError() ? 'error' : ''"
       :help="passwordError() || ''"
@@ -66,8 +41,6 @@
         />
       </a-input>
     </a-form-item>
-
-
     <a-form-item>
       <a-button
         type="primary"
